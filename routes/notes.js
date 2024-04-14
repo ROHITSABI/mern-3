@@ -3,6 +3,9 @@ const router = express.Router();
 const db = require("../db");
 // const { body, validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+
+const JWT_SECRET = "RohitBhilai";
 
 router.post("/createUser", async (req, res) => {
   //   console.log(req.body); //use in Thunder client--> req.body --> {"name":"Rohit"}
@@ -27,7 +30,5 @@ router.post("/createUser", async (req, res) => {
     }
   });
 });
-
-router.post("/createUser/:id", (req, res) => {});
 
 module.exports = router;
